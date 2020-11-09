@@ -17,13 +17,7 @@ export default function Dashboard() {
 
   return (
     <View style={s.main}>
-      <Text color={c.white}>hola mundo asdads</Text>
-      <Button
-        color={c.light_gray}
-        textColor={c.dark_gray}
-        onPress={_navigate}
-        title={'press me!'}
-      />
+      <View style={s.movie_list_container}></View>
     </View>
   );
 }

@@ -19,8 +19,6 @@ export default function Navigator() {
               headerShown: false,
             }}
           />
-
-          <Stack.Screen component={screen.Second} name={'second'} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
