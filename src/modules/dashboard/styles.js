@@ -11,8 +11,9 @@ export default StyleSheet.create({
     width: wp(100),
     backgroundColor: c.secondary,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     position: 'relative',
+    paddingTop: 30,
   },
 
   movie_list_container: {
@@ -21,8 +22,8 @@ export default StyleSheet.create({
     height: '100%',
     paddingVertical: 20,
     backgroundColor: c.primary,
-    borderTopRightRadius: 18,
-    borderTopLeftRadius: 18,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
     position: 'absolute',
     top: hp(25),
   },
