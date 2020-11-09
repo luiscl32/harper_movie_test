@@ -10,4 +10,6 @@ export default {
   black: '#000',
   white: '#fff',
   sub_titles: '#f8f8f8',
+  sky_blue: '#8DBDE0',
+  placeholder: '#BBD7EC',
 };

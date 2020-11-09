@@ -1,8 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
-import c from 'theme/colors';
-
 export default StyleSheet.create({
   container: {
     width: wp(100),
@@ -16,6 +14,6 @@ export default StyleSheet.create({
     height: 43,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: c.yellow,
+    backgroundColor: 'transparent',
   },
 });
