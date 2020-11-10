@@ -20,7 +20,7 @@ export default StyleSheet.create({
     flex: 1,
     width: wp(100),
     height: '100%',
-    paddingVertical: 20,
+    paddingVertical: 40,
     backgroundColor: c.primary,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,

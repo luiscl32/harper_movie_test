@@ -3,6 +3,7 @@ import {View} from 'react-native';
 
 //components
 import SearchBar from './ui/search-bar';
+import MovieSection from 'shared/section/movie_section';
 
 import s from './styles';
 
@@ -18,7 +19,9 @@ export default function Dashboard() {
   return (
     <View style={s.main}>
       <SearchBar />
-      <View style={s.movie_list_container}></View>
+      <View style={s.movie_list_container}>
+        <MovieSection title={'RECOMMENDED FOR YOU'} />
+      </View>
     </View>
   );
 }
