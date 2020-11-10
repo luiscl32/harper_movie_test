@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
 
 //components
 import SearchBar from './ui/search-bar';
@@ -20,7 +20,10 @@ export default function Dashboard() {
     <View style={s.main}>
       <SearchBar />
       <View style={s.movie_list_container}>
-        <MovieSection title={'RECOMMENDED FOR YOU'} />
+        <ScrollView style={s.scroll} showsVerticalScrollIndicator={false}>
+          <MovieSection title={'RECOMMENDED FOR YOU'} seeAll={true} />
+          <MovieSection title={'TOP RATED'} seeAll={true} />
+        </ScrollView>
       </View>
     </View>
   );

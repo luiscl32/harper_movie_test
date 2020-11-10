@@ -12,7 +12,7 @@ export default StyleSheet.create({
     backgroundColor: c.secondary,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    position: 'relative',
+
     paddingTop: 30,
   },
 
@@ -20,11 +20,15 @@ export default StyleSheet.create({
     flex: 1,
     width: wp(100),
     height: '100%',
-    paddingVertical: 40,
+    paddingTop: 40,
     backgroundColor: c.primary,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
-    position: 'absolute',
-    top: hp(25),
+    marginTop: 40,
+  },
+
+  scroll: {
+    flex: 1,
+    width: '100%',
   },
 });

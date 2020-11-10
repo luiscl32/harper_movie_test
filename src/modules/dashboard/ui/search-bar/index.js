@@ -7,6 +7,7 @@ import c from 'theme/colors';
 import s from './styles';
 
 export default function Search() {
+  const [search, setSearch] = React.useState('');
   return (
     <View style={s.container}>
       <Text
@@ -20,7 +21,7 @@ export default function Search() {
       </Text>
 
       <View style={s.search_container}>
-        <SearchBar />
+        <SearchBar value={search} onChangeText={(val) => setSearch(val)} />
       </View>
     </View>
   );
