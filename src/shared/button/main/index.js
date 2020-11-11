@@ -11,13 +11,20 @@ export default function MainButton({
   color = '#2d2d2d',
   textColor = '#fff',
   onPress = () => {},
+  radius = 8,
+  mt = 20,
+  textSize = 16,
 }) {
   return (
     <Pressable
       android_ripple={ripple_config}
-      style={s.container(align, color)}
+      style={s.container(align, color, radius, mt)}
       onPress={onPress}>
-      <Text size={16} color={`${textColor}`} type={'medium'} align={'center'}>
+      <Text
+        size={textSize}
+        color={`${textColor}`}
+        type={'medium'}
+        align={'center'}>
         {title}
       </Text>
     </Pressable>

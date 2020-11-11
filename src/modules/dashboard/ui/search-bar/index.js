@@ -17,7 +17,7 @@ export default function Search() {
         type={'bold'}
         mb={15}
         letterSpacing={1.59}>
-        {`Hello,what do you\nwant to watch`}
+        {`Hello,what do you\nwant to watch?`}
       </Text>
 
       <View style={s.search_container}>

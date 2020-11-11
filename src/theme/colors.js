@@ -12,4 +12,5 @@ export default {
   sub_titles: '#f8f8f8',
   sky_blue: '#8DBDE0',
   placeholder: '#BBD7EC',
+  red: '#ff0136',
 };

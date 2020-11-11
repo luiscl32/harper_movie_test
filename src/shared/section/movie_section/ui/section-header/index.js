@@ -21,8 +21,8 @@ export default function SectionHeader({title, onPress, showSeeAll}) {
           <Btn onPress={onPress}>
             <Text
               color={c.placeholder}
-              size={16}
-              type={'light'}
+              size={14}
+              type={'regular'}
               align={'right'}>
               See all
             </Text>

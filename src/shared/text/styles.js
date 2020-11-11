@@ -1,7 +1,18 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  font: (size, type, color, align, mt, mb, mr, ml, letterSpacing) => ({
+  font: (
+    size,
+    type,
+    color,
+    align,
+    mt,
+    mb,
+    mr,
+    ml,
+    letterSpacing,
+    lineHeight,
+  ) => ({
     fontSize: size,
     color: color,
     fontFamily: type,
@@ -11,5 +22,6 @@ export default StyleSheet.create({
     marginRight: mr,
     marginLeft: ml,
     letterSpacing: letterSpacing,
+    lineHeight: size * lineHeight,
   }),
 });
