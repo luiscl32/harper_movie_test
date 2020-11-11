@@ -1,13 +1,12 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 
-function reducers() {
-  return {
-    testing: 'hola mundo',
-  };
-}
+import ReduxSaga from 'redux-saga';
+import rootReducer from 'redux_config/reducers';
+
+const reduxSaga = ReduxSaga();
 
 export default () => {
   return {
-    ...createStore(reducers),
+    ...createStore(rootReducer, applyMiddleware(reduxSaga)),
   };
 };
