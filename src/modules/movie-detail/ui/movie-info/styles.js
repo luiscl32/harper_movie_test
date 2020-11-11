@@ -1,19 +1,21 @@
 import {StyleSheet} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import c from 'theme/colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     width: wp(100),
-    height: '100%',
+    height: 'auto',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: c.primary,
+    marginVertical: 20,
+    paddingHorizontal: 20,
+    backgroundColor: 'transparent',
   },
 
-  scroll: {
-    flex: 1,
+  wrapper: {
     width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
 });

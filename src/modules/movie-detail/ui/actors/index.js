@@ -62,3 +62,11 @@ export default function Actors({actorsData}) {
     </View>
   );
 }
+
+Actors.propTypes = {
+  actorsData: PropTypes.array.isRequired,
+};
+
+Actors.defaultProps = {
+  actorsData: [],
+};
