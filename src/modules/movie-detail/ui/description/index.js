@@ -54,10 +54,11 @@ export default function Description({name, movieDescription, stars}) {
 
       <Text
         color={c.sub_titles}
-        size={14}
+        size={12}
         align={'left'}
         numberOfLines={6}
         mt={30}
+        lineHeight={2}
         type={'light'}>
         {movieDescription}
       </Text>
@@ -67,7 +68,7 @@ export default function Description({name, movieDescription, stars}) {
 
 Description.propTypes = {
   name: PropTypes.string.isRequired,
-  movieDescription: PropTypes.string.isRequired.toString,
+  movieDescription: PropTypes.string.isRequired,
   stars: PropTypes.number,
 };
 

@@ -1,42 +1,43 @@
 import {StyleSheet} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import c from 'theme/colors';
 
 export default StyleSheet.create({
   container: {
     width: wp(100),
     height: 'auto',
-    marginTop: 20,
-    marginBottom: 20,
-    backgroundColor: 'transparent',
+
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 20,
+    backgroundColor: 'transparent',
   },
 
   wrapper: {
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
-  filler: {
-    flex: 1,
-    width: '100%',
-  },
-
-  rating_container: {
-    width: 100,
-    height: 'auto',
+  actor_container: {
+    width: 60,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'transparent',
-    marginRight: 20,
   },
 
-  starIcon: {
-    width: 20,
-    height: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 1,
+  actor_photo: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: c.light_gray,
+    overflow: 'hidden',
+  },
+
+  photo: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
   },
 });
