@@ -1,3 +1,12 @@
 import axios from 'axios';
-const API_TOKEN =
-  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOWQyNzU0N2I4NjdmZjllNDg5MjdkY2FiY2NjMjIxZSIsInN1YiI6IjU5N2I0NWYyOTI1MTQxMzY0ZTAxMTc4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.76VUM2WYfW7_SxL4F8L4fre2Tqm7tWHlSXqxm0v9hlY';
+
+const API_URL = 'https://api.themoviedb.org/3/';
+const API_KEY = '09d27547b867ff9e48927dcabccc221e';
+
+export const apiCall = (url, query, data, headers, method) =>
+  axios({
+    method,
+    url: `${API_URL}${url}?api_key=${API_KEY}${query}`,
+    data,
+    headers,
+  });

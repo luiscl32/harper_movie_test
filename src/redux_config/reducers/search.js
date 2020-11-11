@@ -12,11 +12,11 @@ export default function (state = initialState, action) {
       return {...state};
       break;
 
-    case SEARCH_ERROR:
+    case SEARCH_COMPLETE:
       return {...state};
       break;
 
-    case SEARCH_COMPLETE:
+    case SEARCH_ERROR:
       return {...state};
       break;
 

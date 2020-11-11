@@ -3,11 +3,21 @@ import {View} from 'react-native';
 import SearchBar from 'shared/search-bar';
 import Text from 'shared/text';
 
+import {useDispatch} from 'react-redux';
+import {searchMovie} from 'redux_config/actions/search';
+
 import c from 'theme/colors';
 import s from './styles';
 
 export default function Search() {
-  const [search, setSearch] = React.useState('');
+  const dispatch = useDispatch();
+
+  const [movieName, setMovieName] = React.useState('');
+
+  React.useEffect(() => {
+    dispatch(searchMovie({movieName}));
+  }, [movieName]);
+
   return (
     <View style={s.container}>
       <Text
@@ -21,7 +31,10 @@ export default function Search() {
       </Text>
 
       <View style={s.search_container}>
-        <SearchBar value={search} onChangeText={(val) => setSearch(val)} />
+        <SearchBar
+          value={movieName}
+          onChangeText={(val) => setMovieName(val)}
+        />
       </View>
     </View>
   );

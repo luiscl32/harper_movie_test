@@ -4,10 +4,23 @@ import {
   SEARCH_ERROR,
   SEARCH_COMPLETE,
 } from 'redux_config/constants';
+import {apiCall} from 'utils/api';
 
 function* searchMovie({payload}) {
   try {
-  } catch (error) {}
+    const res = yield call(
+      apiCall,
+      'search/movie',
+      `&query=${payload.movieName}`,
+      null,
+      null,
+      'GET',
+    );
+
+    yield put({type: SEARCH_COMPLETE, res});
+  } catch (error) {
+    yield put({type: SEARCH_ERROR, error});
+  }
 }
 
 export default function* search() {
