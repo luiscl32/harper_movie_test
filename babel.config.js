@@ -23,6 +23,7 @@ module.exports = {
           modules: './src/modules',
           navigation: './src/navigation',
           utils: './src/utils',
+          redux_config: './src/redux_config',
         },
       },
     ],
