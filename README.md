@@ -1,4 +1,4 @@
-# harper_movie_tes# Movie list
+# Movie list
 
 pequeña app en react native que muestra una lista de peliculas y su detalle del api del sitio
 [TheMovieDB](https://www.themoviedb.org/settings/api)
