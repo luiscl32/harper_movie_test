@@ -3,6 +3,11 @@
 pequeña app en react native que muestra una lista de peliculas y su detalle del api del sitio
 [TheMovieDB](https://www.themoviedb.org/settings/api)
 
+# Descarga
+puedes descargar el apk del proyecto en este enlace 
+
+[Descargar](https://mega.nz/file/FBwWFa4Y#8QS84Ka70E5wdDqtBMEDCeVDDnEX_70T3P9bF7dOPYU)
+
 # Preview
 
 | dark theme                              | light theme                             | detail light                            | detail dark                             |
