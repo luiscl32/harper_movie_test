@@ -1,4 +1,3 @@
-import {prop} from 'ramda';
 import React from 'react';
 import {View, FlatList} from 'react-native';
 import Card from 'shared/cards/movie_card';
@@ -17,7 +16,7 @@ export default function List({data, loading}) {
         removeClippedSubviews={true}
         maxToRenderPerBatch={5}
         windowSize={70}
-        renderItem={({item, index}) => <Card item={item} />}
+        renderItem={({item}) => <Card item={item} />}
         keyExtractor={(item, index) => `${item}-${index}`}
         ItemSeparatorComponent={() => <View style={s.separator} />}
         ListFooterComponent={() => <View style={s.separator} />}

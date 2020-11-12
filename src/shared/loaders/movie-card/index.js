@@ -6,8 +6,8 @@ import s from './styles';
 
 export default function MovieCardLoader() {
   return (
-    <Placeholder Animation={Fade}>
-      <View style={s.container}>
+    <View style={s.container}>
+      <Placeholder Animation={Fade}>
         <PlaceholderLine width={50} height={16} style={s.img_container} />
         <PlaceholderLine
           width={50}
@@ -19,7 +19,7 @@ export default function MovieCardLoader() {
           height={16}
           style={{alignSelf: 'flex-start', marginBottom: 10}}
         />
-      </View>
-    </Placeholder>
+      </Placeholder>
+    </View>
   );
 }
