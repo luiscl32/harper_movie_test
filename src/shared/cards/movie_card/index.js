@@ -16,7 +16,7 @@ export default function MovieCard({item}) {
   const {navigate} = useNavigation();
 
   function _goToMovieDetail() {
-    navigate('movie/detail', {item});
+    navigate('movie/detail', {movieId: item?.id});
   }
 
   const qualify = Math.round(item?.vote_average);

@@ -46,7 +46,25 @@ function* getRecommendedMovies({payload}) {
   }
 }
 
+function* getMovieDetail({payload}) {
+  try {
+    const res = yield call(
+      apiCall,
+      `movie/${payload.movieId}`,
+      '',
+      null,
+      null,
+      'GET',
+    );
+
+    yield put({type: FETCH_MOVIE_DETAIL_COMPLETE, res});
+  } catch (error) {
+    yield put({type: FETCH_MOVIE_DETAIL_ERROR, error});
+  }
+}
+
 export default function* movies() {
   yield takeLatest(FETCH_TOP_RATED_MOVIES_START, getTopRatedMovies);
   yield takeLatest(FETCH_RECOMMENDED_MOVIES_START, getRecommendedMovies);
+  yield takeLatest(FETCH_MOVIE_DETAIL_START, getMovieDetail);
 }

@@ -8,10 +8,14 @@ import Button from 'shared/button/main';
 
 import PropTypes from 'prop-types';
 
+import {calculateStars} from 'utils/helpers';
+
 import c from 'theme/colors';
 import s from './styles';
 
 export default function Description({name, movieDescription, stars}) {
+  const startsArray = calculateStars(stars);
+
   return (
     <View style={s.container}>
       <View style={s.wrapper}>
@@ -33,21 +37,15 @@ export default function Description({name, movieDescription, stars}) {
         <View style={s.filler} />
         <View style={s.rating_container}>
           <View style={s.wrapper}>
-            <View style={s.starIcon}>
-              <Icon name={'md-star'} size={18} color={c.yellow} />
-            </View>
-            <View style={s.starIcon}>
-              <Icon name="md-star" size={18} color={c.yellow} />
-            </View>
-            <View style={s.starIcon}>
-              <Icon name="md-star" size={18} color={c.yellow} />
-            </View>
-            <View style={s.starIcon}>
-              <Icon name="md-star" size={18} color={c.yellow} />
-            </View>
-            <View style={s.starIcon}>
-              <Icon name="md-star" size={18} color={c.yellow} />
-            </View>
+            {startsArray.map((item, i) => (
+              <View style={s.starIcon}>
+                <Icon
+                  name={'md-star'}
+                  size={18}
+                  color={item ? c.yellow : c.yellow_opacity}
+                />
+              </View>
+            ))}
           </View>
         </View>
       </View>

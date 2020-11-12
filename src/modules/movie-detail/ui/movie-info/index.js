@@ -1,6 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
 
+import moment from 'moment';
+
 import Text from 'shared/text';
 
 import PropTypes from 'prop-types';
@@ -10,30 +12,36 @@ import s from './styles';
 export default function MovieInfo({studio, gender, release}) {
   return (
     <View style={s.container}>
-      <View style={[s.wrapper, {marginTop: 10}]}>
+      <View style={[s.wrapper, {marginTop: 10, flexWrap: 'wrap'}]}>
         <Text color={c.white} type={'bold'} size={16} align={'left'}>
           Studio:{' '}
         </Text>
-        <Text color={c.white} type={'light'} size={16} align={'left'}>
-          {studio}
-        </Text>
+        {studio.map((item, i) => (
+          <Text key={i} color={c.white} type={'light'} size={16} align={'left'}>
+            {item.name}
+            {','}
+          </Text>
+        ))}
       </View>
 
       <View style={[s.wrapper, {marginTop: 10}]}>
         <Text color={c.white} type={'bold'} size={16} align={'left'}>
           Gender:{' '}
         </Text>
-        <Text color={c.white} type={'light'} size={16} align={'left'}>
-          {gender}
-        </Text>
+        {gender.map((item, i) => (
+          <Text key={i} color={c.white} type={'light'} size={16} align={'left'}>
+            {item.name}
+            {','}
+          </Text>
+        ))}
       </View>
 
-      <View style={[s.wrapper, {marginTop: 10}]}>
+      <View style={[s.wrapper, {marginTop: 10, flexWrap: 'wrap'}]}>
         <Text color={c.white} type={'bold'} size={16} align={'left'}>
           Release:{' '}
         </Text>
         <Text color={c.white} type={'light'} size={16} align={'left'}>
-          {release}
+          {moment(release).format('YYYY')}
         </Text>
       </View>
     </View>
@@ -41,13 +49,13 @@ export default function MovieInfo({studio, gender, release}) {
 }
 
 MovieInfo.propTypes = {
-  studio: PropTypes.string.isRequired,
-  gender: PropTypes.string.isRequired,
-  release: PropTypes.number.isRequired,
+  studio: PropTypes.array.isRequired,
+  gender: PropTypes.array.isRequired,
+  release: PropTypes.string.isRequired,
 };
 
 MovieInfo.defaultProps = {
-  studio: 'Warner Bros',
-  gender: 'Action, Fantasy, Comedy',
-  release: 2018,
+  studio: [],
+  gender: [],
+  release: '',
 };

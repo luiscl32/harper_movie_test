@@ -6,6 +6,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import c from 'theme/colors';
 import s from './styles';
+
+import {convertImage} from 'utils/helpers';
+
 import {useNavigation} from '@react-navigation/native';
 
 export default function MovieHeader({img}) {
@@ -23,7 +26,9 @@ export default function MovieHeader({img}) {
 
   return (
     <View style={s.container}>
-      <ImageBackground style={s.backgroundImage} source={{uri: `${img}`}}>
+      <ImageBackground
+        style={s.backgroundImage}
+        source={{uri: `${convertImage(img)}`}}>
         <View style={s.header}>
           <View style={s.wrapper}>
             <Btn onPress={_goBack}>
