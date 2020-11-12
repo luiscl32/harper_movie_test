@@ -1,4 +1,0 @@
-/* movie detail */
-export const FETCH_DETAIL_START = 'FETCH_DETAIL_START';
-export const FETCH_DETAIL_ERROR = 'FETCH_DETAIL_ERROR';
-export const FETCH_DETAIL_COMPLETE = 'FETCH_DETAIL_ERROR';
