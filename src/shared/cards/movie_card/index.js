@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+import MovieCardLoader from 'shared/loaders/movie-card';
 import Btn from 'shared/button/Btn';
 import Text from 'shared/text';
 
@@ -28,6 +29,10 @@ export default function MovieCard({item}) {
   const qualify = Math.round(item?.vote_average);
 
   const stars = calculateStars(qualify);
+
+  if (item.loading) {
+    return <MovieCardLoader />;
+  }
 
   return (
     <View style={s.btn_container}>

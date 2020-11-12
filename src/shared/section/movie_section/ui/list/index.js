@@ -6,18 +6,13 @@ import PropTypes from 'prop-types';
 
 import s from './styles';
 
-export default function List({data}) {
-  const dummyData = new Array(20).fill({
-    name: 'Avengers: Endgame',
-    imgurl:
-      'https://images-na.ssl-images-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg',
-    stars: 5,
-  });
+export default function List({data, loading}) {
+  const loaderData = new Array(10).fill({loading: true});
 
   return (
     <View style={s.container}>
       <FlatList
-        data={data}
+        data={loading ? loaderData : data}
         horizontal={true}
         removeClippedSubviews={true}
         maxToRenderPerBatch={5}
@@ -35,8 +30,10 @@ export default function List({data}) {
 
 List.propTypes = {
   data: PropTypes.array.isRequired,
+  loading: PropTypes.bool,
 };
 
 List.defaultProps = {
   data: [],
+  loading: false,
 };

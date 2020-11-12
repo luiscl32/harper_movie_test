@@ -15,7 +15,6 @@ import {convertImage} from 'utils/helpers';
 export default function Actors({movieId, theme}) {
   const dispatch = useDispatch();
   const data = useSelector((state) => {
-    console.log(state.movie_actors);
     return movie_actors(state);
   });
 

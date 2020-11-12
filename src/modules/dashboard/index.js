@@ -10,7 +10,7 @@ import Btn from 'shared/button/Btn';
 import Icon from 'react-native-vector-icons/Ionicons';
 //selectors
 import {useDispatch, useSelector} from 'react-redux';
-import {movies, app_theme} from 'redux_config/selectors';
+import {movies, app_theme, isLoadingMovies} from 'redux_config/selectors';
 
 //
 import {changeTheme} from 'redux_config/actions/theme';
@@ -23,6 +23,9 @@ export default function Dashboard() {
   const dispatch = useDispatch();
   const moviesSearched = useSelector((state) => {
     return movies(state);
+  });
+  const loading = useSelector((state) => {
+    return isLoadingMovies(state);
   });
   const theme = useSelector((state) => {
     return app_theme(state);
@@ -55,6 +58,7 @@ export default function Dashboard() {
               title={'SEARCH RESULTS'}
               seeAll={false}
               data={moviesSearched}
+              loading={loading}
             />
           )}
 

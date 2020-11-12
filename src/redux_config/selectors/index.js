@@ -1,6 +1,10 @@
 import {get} from 'lodash';
 
 export const isLoadingMovies = (state) => get(state, 'search.loading');
+export const isLoadingTopRated = (state) =>
+  get(state, 'top_rated_movies.loading');
+export const isLoadingRecommended = (state) =>
+  get(state, 'recommended_movies.loading');
 //
 export const movies = (state) => get(state, 'search.movies.results');
 //
