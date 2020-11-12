@@ -4,9 +4,10 @@ import {View, ScrollView} from 'react-native';
 //components
 import SearchBar from './ui/search-bar';
 import MovieSection from 'shared/section/movie_section';
+import TopRatedMovies from './ui/top-rated';
 
 //selectors
-import {movies, isLoadingMovies} from 'redux_config/selectors';
+import {movies} from 'redux_config/selectors';
 
 import * as R from 'ramda';
 import s from './styles';
@@ -29,8 +30,8 @@ export default function Dashboard() {
               data={moviesSearched}
             />
           )}
-          <MovieSection title={'RECOMMENDED FOR YOU'} seeAll={true} />
-          <MovieSection title={'TOP RATED'} seeAll={true} />
+          <MovieSection title={'RECOMMENDED FOR YOU'} seeAll={true} data={[]} />
+          <TopRatedMovies />
         </ScrollView>
       </View>
     </View>
