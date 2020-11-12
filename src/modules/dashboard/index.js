@@ -37,12 +37,18 @@ export default function Dashboard() {
 
   return (
     <View style={s.main}>
-      <Btn onPress={_onChangeTheme}>
-        <Icon name={'moon'} color={c.white} size={24} />
-      </Btn>
+      <View style={s.btn}>
+        <Btn onPress={_onChangeTheme}>
+          <Icon
+            name={theme ? 'moon' : 'moon-outline'}
+            color={c.white}
+            size={24}
+          />
+        </Btn>
+      </View>
 
       <SearchBar />
-      <View style={s.movie_list_container}>
+      <View style={s.movie_list_container(theme)}>
         <ScrollView style={s.scroll} showsVerticalScrollIndicator={false}>
           {!R.isEmpty(moviesSearched) && !R.isNil(moviesSearched) && (
             <MovieSection

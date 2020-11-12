@@ -12,7 +12,7 @@ import c from 'theme/colors';
 import s from './styles';
 import {convertImage} from 'utils/helpers';
 
-export default function Actors({movieId}) {
+export default function Actors({movieId, theme}) {
   const dispatch = useDispatch();
   const data = useSelector((state) => {
     console.log(state.movie_actors);
@@ -23,7 +23,7 @@ export default function Actors({movieId}) {
     dispatch(fetchMovieActors({movieId: movieId}));
   }, [movieId]);
 
-  const fourActors = data.slice(0, 4);
+  const fourActors = data?.slice(0, 4);
 
   const ActorCard = ({item}) => {
     return (
@@ -39,7 +39,7 @@ export default function Actors({movieId}) {
           lineHeight={1}
           size={12}
           type={'light'}
-          color={c.white}
+          color={theme ? c.white : c.primary}
           align={'center'}>
           {item?.name}
         </Text>
@@ -60,8 +60,10 @@ export default function Actors({movieId}) {
 
 Actors.propTypes = {
   movieId: PropTypes.number.isRequired,
+  theme: PropTypes.bool,
 };
 
 Actors.defaultProps = {
   movieId: 0,
+  theme: false,
 };

@@ -13,13 +13,13 @@ import {calculateStars} from 'utils/helpers';
 import c from 'theme/colors';
 import s from './styles';
 
-export default function Description({name, movieDescription, stars}) {
+export default function Description({name, movieDescription, stars, theme}) {
   const startsArray = calculateStars(stars);
 
   return (
     <View style={s.container}>
       <View style={s.wrapper}>
-        <Text color={c.white} size={25} type={'bold'}>
+        <Text color={theme ? c.white : c.primary} size={25} type={'bold'}>
           {name}
         </Text>
         <View style={s.filler} />
@@ -51,7 +51,7 @@ export default function Description({name, movieDescription, stars}) {
       </View>
 
       <Text
-        color={c.sub_titles}
+        color={theme ? c.sub_titles : c.primary}
         size={12}
         align={'left'}
         numberOfLines={6}
@@ -68,6 +68,7 @@ Description.propTypes = {
   name: PropTypes.string.isRequired,
   movieDescription: PropTypes.string.isRequired,
   stars: PropTypes.number,
+  theme: PropTypes.bool,
 };
 
 Description.defaultProps = {
@@ -75,4 +76,5 @@ Description.defaultProps = {
   movieDescription:
     'El director de la Agencia SHIELD decide reclutar a un equipo para salvar al mundo de un desastre casi seguro cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial.',
   stars: 0,
+  theme: false,
 };

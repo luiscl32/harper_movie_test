@@ -11,9 +11,15 @@ import c from 'theme/colors';
 import s from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {calculateStars, convertImage} from 'utils/helpers';
+import {useSelector} from 'react-redux';
+import {app_theme} from 'redux_config/selectors';
 
 export default function MovieCard({item}) {
   const {navigate} = useNavigation();
+
+  const theme = useSelector((state) => {
+    return app_theme(state);
+  });
 
   function _goToMovieDetail() {
     navigate('movie/detail', {movieId: item?.id});
@@ -36,7 +42,7 @@ export default function MovieCard({item}) {
             />
           </View>
           <View style={s.text_container}>
-            <Text align={'left'} size={14} color={c.white}>
+            <Text align={'left'} size={14} color={theme ? c.white : c.primary}>
               {item?.original_title}
             </Text>
           </View>

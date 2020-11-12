@@ -16,19 +16,28 @@ export default StyleSheet.create({
     paddingTop: 30,
   },
 
-  movie_list_container: {
+  movie_list_container: (theme) => ({
     flex: 1,
     width: wp(100),
     height: '100%',
     paddingTop: 40,
-    backgroundColor: c.primary,
+    backgroundColor: theme ? c.primary : c.white,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
     marginTop: 40,
-  },
+  }),
 
   scroll: {
     flex: 1,
     width: '100%',
+  },
+
+  btn: {
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    marginRight: 20,
   },
 });
