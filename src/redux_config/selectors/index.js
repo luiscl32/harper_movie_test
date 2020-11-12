@@ -1,3 +1,4 @@
 import {get} from 'lodash';
 
-export const movieResult = (state) => get(state, 'search.movieResults');
+export const isLoadingMovies = (state) => get(state, 'search.loading');
+export const movies = (state) => get(state, 'search.movies.results');

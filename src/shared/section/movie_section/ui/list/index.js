@@ -1,10 +1,12 @@
+import {prop} from 'ramda';
 import React from 'react';
 import {View, FlatList} from 'react-native';
 import Card from 'shared/cards/movie_card';
+import PropTypes from 'prop-types';
 
 import s from './styles';
 
-export default function List({data, endpoint}) {
+export default function List({data}) {
   const dummyData = new Array(20).fill({
     name: 'Avengers: Endgame',
     imgurl:
@@ -15,7 +17,7 @@ export default function List({data, endpoint}) {
   return (
     <View style={s.container}>
       <FlatList
-        data={dummyData}
+        data={data}
         horizontal={true}
         removeClippedSubviews={true}
         maxToRenderPerBatch={5}
@@ -30,3 +32,11 @@ export default function List({data, endpoint}) {
     </View>
   );
 }
+
+List.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+
+List.defaultProps = {
+  data: [],
+};

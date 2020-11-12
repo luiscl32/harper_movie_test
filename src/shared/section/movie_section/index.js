@@ -8,24 +8,24 @@ import PropTypes from 'prop-types';
 
 import s from './styles';
 
-export default function MovieSection({endpoint, title, onGoToList, seeAll}) {
+export default function MovieSection({data, title, onGoToList, seeAll}) {
   return (
     <View style={s.container}>
       <SectionHeader title={title} onPress={onGoToList} showSeeAll={seeAll} />
-      <List data={[]} endpoint={endpoint} />
+      <List data={data} />
     </View>
   );
 }
 
 MovieSection.proptypes = {
-  endpoint: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
   onGoToList: PropTypes.func,
   seeAll: PropTypes.bool,
 };
 
 MovieSection.defaultProps = {
-  endpoint: '',
+  data: [],
   title: '',
   onGoToList: () => {},
   seeAll: false,

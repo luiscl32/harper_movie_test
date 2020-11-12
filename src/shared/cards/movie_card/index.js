@@ -26,12 +26,12 @@ export default function MovieCard({item}) {
             <Image
               style={s.img}
               source={{
-                uri: `${item?.imgurl}`,
+                uri: `${item?.poster_path}`,
               }}
             />
           </View>
           <Text align={'left'} size={16} color={c.white} mb={10}>
-            {item?.name}
+            {item?.original_title}
           </Text>
 
           <View style={s.star_container}>
