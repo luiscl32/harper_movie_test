@@ -1,18 +1,38 @@
 import React from 'react';
 import {View, Image} from 'react-native';
+import Text from 'shared/text';
 
 import PropTypes from 'prop-types';
 
+import {useDispatch, useSelector} from 'react-redux';
+import {movie_actors} from 'redux_config/selectors';
+import {fetchMovieActors} from 'redux_config/actions/movies';
+
 import c from 'theme/colors';
 import s from './styles';
-import Text from 'shared/text';
+import {convertImage} from 'utils/helpers';
 
-export default function Actors({actorsData}) {
+export default function Actors({movieId}) {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => {
+    console.log(state.movie_actors);
+    return movie_actors(state);
+  });
+
+  React.useEffect(() => {
+    dispatch(fetchMovieActors({movieId: movieId}));
+  }, [movieId]);
+
+  const fourActors = data.slice(0, 4);
+
   const ActorCard = ({item}) => {
     return (
       <View style={s.actor_container}>
         <View style={s.actor_photo}>
-          <Image style={s.photo} source={{uri: `${item?.img}`}} />
+          <Image
+            style={s.photo}
+            source={{uri: `${convertImage(item?.profile_path)}`}}
+          />
         </View>
         <Text
           mt={10}
@@ -29,44 +49,19 @@ export default function Actors({actorsData}) {
 
   return (
     <View style={s.container}>
-      <View style={s.wrapper}>
-        <ActorCard
-          item={{
-            name: 'jason momoa',
-            img:
-              'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abcd79e7-0267-4ae1-8a3b-1709339f8d75/dahrmn1-af964d26-8259-4381-b226-c773d7f2191c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYWJjZDc5ZTctMDI2Ny00YWUxLThhM2ItMTcwOTMzOWY4ZDc1XC9kYWhybW4xLWFmOTY0ZDI2LTgyNTktNDM4MS1iMjI2LWM3NzNkN2YyMTkxYy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.wouWlShYP99J36395iSiy7KdGa91RPNOToXjHs8kE7o',
-          }}
-        />
-        <ActorCard
-          item={{
-            name: 'jason momoa',
-            img:
-              'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abcd79e7-0267-4ae1-8a3b-1709339f8d75/dahrmn1-af964d26-8259-4381-b226-c773d7f2191c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYWJjZDc5ZTctMDI2Ny00YWUxLThhM2ItMTcwOTMzOWY4ZDc1XC9kYWhybW4xLWFmOTY0ZDI2LTgyNTktNDM4MS1iMjI2LWM3NzNkN2YyMTkxYy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.wouWlShYP99J36395iSiy7KdGa91RPNOToXjHs8kE7o',
-          }}
-        />
-        <ActorCard
-          item={{
-            name: 'jason momoa',
-            img:
-              'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abcd79e7-0267-4ae1-8a3b-1709339f8d75/dahrmn1-af964d26-8259-4381-b226-c773d7f2191c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYWJjZDc5ZTctMDI2Ny00YWUxLThhM2ItMTcwOTMzOWY4ZDc1XC9kYWhybW4xLWFmOTY0ZDI2LTgyNTktNDM4MS1iMjI2LWM3NzNkN2YyMTkxYy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.wouWlShYP99J36395iSiy7KdGa91RPNOToXjHs8kE7o',
-          }}
-        />
-        <ActorCard
-          item={{
-            name: 'jason momoa',
-            img:
-              'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abcd79e7-0267-4ae1-8a3b-1709339f8d75/dahrmn1-af964d26-8259-4381-b226-c773d7f2191c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYWJjZDc5ZTctMDI2Ny00YWUxLThhM2ItMTcwOTMzOWY4ZDc1XC9kYWhybW4xLWFmOTY0ZDI2LTgyNTktNDM4MS1iMjI2LWM3NzNkN2YyMTkxYy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.wouWlShYP99J36395iSiy7KdGa91RPNOToXjHs8kE7o',
-          }}
-        />
+      <View style={[s.wrapper, {flexWrap: 'wrap'}]}>
+        {fourActors?.map((item, i) => (
+          <ActorCard key={i} item={item} />
+        ))}
       </View>
     </View>
   );
 }
 
 Actors.propTypes = {
-  actorsData: PropTypes.array.isRequired,
+  movieId: PropTypes.number.isRequired,
 };
 
 Actors.defaultProps = {
-  actorsData: [],
+  movieId: 0,
 };

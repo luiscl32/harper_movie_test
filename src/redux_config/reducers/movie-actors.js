@@ -13,11 +13,11 @@ export default function (state = initialState, action) {
       break;
 
     case FETCH_MOVIE_ACTORS_COMPLETE:
-      return {...state, loading: false, movies: action.res.data};
+      return {...state, loading: false, cast: action.res.data.cast};
       break;
 
     case FETCH_MOVIE_ACTORS_ERROR:
-      return {...state, loading: false, movies: null};
+      return {...state, loading: false, cast: null};
       break;
 
     default:

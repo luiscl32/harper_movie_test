@@ -10,3 +10,5 @@ export const recommended_movies = (state) =>
   get(state, 'recommended_movies.movies');
 //
 export const movie_detail = (state) => get(state, 'movie_detail.detail');
+//
+export const movie_actors = (state) => get(state, 'movie_actors.cast');

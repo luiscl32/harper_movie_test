@@ -36,7 +36,7 @@ export default function MovieDetail({route, navigation}) {
           stars={data?.vote_average}
         />
 
-        <Actors />
+        <Actors movieId={movieId} />
 
         <MovieInfo
           studio={data?.production_companies}
