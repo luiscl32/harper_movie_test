@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import c from 'theme/colors';
 import s from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {calculateStars, convertImage} from 'utils/helpers';
 
 export default function MovieCard({item}) {
   const {navigate} = useNavigation();
@@ -17,6 +18,10 @@ export default function MovieCard({item}) {
   function _goToMovieDetail() {
     navigate('movie/detail', {item});
   }
+
+  const qualify = Math.round(item?.vote_average);
+
+  const stars = calculateStars(qualify);
 
   return (
     <View style={s.btn_container}>
@@ -26,31 +31,27 @@ export default function MovieCard({item}) {
             <Image
               style={s.img}
               source={{
-                uri: `${item?.poster_path}`,
+                uri: `${convertImage(item?.poster_path)}`,
               }}
             />
           </View>
-          <Text align={'left'} size={16} color={c.white} mb={10}>
-            {item?.original_title}
-          </Text>
+          <View style={s.text_container}>
+            <Text align={'left'} size={14} color={c.white}>
+              {item?.original_title}
+            </Text>
+          </View>
 
           <View style={s.star_container}>
             <View style={s.wrapper}>
-              <View style={s.starIcon}>
-                <Icon name={'md-star'} size={18} color={c.yellow} />
-              </View>
-              <View style={s.starIcon}>
-                <Icon name="md-star" size={18} color={c.yellow} />
-              </View>
-              <View style={s.starIcon}>
-                <Icon name="md-star" size={18} color={c.yellow} />
-              </View>
-              <View style={s.starIcon}>
-                <Icon name="md-star" size={18} color={c.yellow} />
-              </View>
-              <View style={s.starIcon}>
-                <Icon name="md-star" size={18} color={c.yellow} />
-              </View>
+              {stars.map((item, i) => (
+                <View key={i} style={s.starIcon}>
+                  <Icon
+                    name={'md-star'}
+                    size={18}
+                    color={item ? c.yellow : c.yellow_opacity}
+                  />
+                </View>
+              ))}
             </View>
           </View>
         </View>

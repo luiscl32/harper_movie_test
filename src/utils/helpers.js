@@ -8,18 +8,20 @@ function calculateStars(qualify) {
   const max_qualify = 10;
   const max_stars = 5;
 
-  const calculate = Math.round((max_stars * qualify) / max_qualify);
+  const starCalculate = Math.round((max_stars * qualify) / max_qualify);
 
-  const stars = new Array(5).fill({value: false});
+  const calculate = starCalculate === 0 ? 1 : starCalculate;
 
-  const newStars = [];
+  var newStars = [];
 
-  for (let i = 0; i < stars; i++) {
-    if (i < calculate - 1) {
-      newStars.push({value: true});
+  for (let i = 0; i < max_stars; i++) {
+    if (i < calculate) {
+      newStars[i] = true;
+    } else {
+      newStars[i] = false;
     }
-    newStars.push({value: false});
   }
-
   return newStars;
 }
+
+export {convertImage, calculateStars};

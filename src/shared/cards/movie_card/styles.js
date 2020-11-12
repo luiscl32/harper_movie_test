@@ -4,7 +4,7 @@ import c from 'theme/colors';
 export default StyleSheet.create({
   btn_container: {
     width: 160,
-    height: 270,
+    height: 290,
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 0,
@@ -12,7 +12,7 @@ export default StyleSheet.create({
 
   container: {
     width: 160,
-    height: 270,
+    height: 290,
     backgroundColor: 'transparent',
     borderRadius: 15,
     alignItems: 'center',
@@ -49,11 +49,21 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
 
+  text_container: {
+    width: '100%',
+    height: 30,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginVertical: 10,
+    paddingHorizontal: 3,
+  },
+
   star_container: {
     width: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-start',
+    marginTop: 10,
   },
 
   starIcon: {
