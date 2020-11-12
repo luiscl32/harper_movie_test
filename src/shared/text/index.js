@@ -12,12 +12,27 @@ export default function Text({
   mb = 0,
   mr = 0,
   ml = 0,
+  lineHeight = 1.5,
+  letterSpacing = 1,
+  numberOfLines = 2,
   children,
 }) {
   return (
     <RNText
       allowFontScaling={false}
-      style={s.font(size, _getFont(type), color, align, mt, mb, mr, ml)}>
+      numberOfLines={numberOfLines}
+      style={s.font(
+        size,
+        _getFont(type),
+        color,
+        align,
+        mt,
+        mb,
+        mr,
+        ml,
+        letterSpacing,
+        lineHeight,
+      )}>
       {children}
     </RNText>
   );

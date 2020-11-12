@@ -1,13 +1,19 @@
 import {StyleSheet} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import c from 'theme/colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     width: wp(100),
-    backgroundColor: c.dark_gray,
+    height: 'auto',
+    paddingVertical: 10,
+    backgroundColor: 'transparent',
+    paddingHorizontal: 30,
+  },
+  search_container: {
+    width: '100%',
+    height: 43,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'transparent',
   },
 });

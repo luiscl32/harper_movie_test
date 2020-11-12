@@ -1,4 +1,4 @@
 import Dashboard from 'modules/dashboard';
-import Second from 'modules/second';
+import MovieDetail from 'modules/movie-detail';
 //
-export {Dashboard, Second};
+export {Dashboard, MovieDetail};

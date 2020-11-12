@@ -19,8 +19,13 @@ export default function Navigator() {
               headerShown: false,
             }}
           />
-
-          <Stack.Screen component={screen.Second} name={'second'} />
+          <Stack.Screen
+            component={screen.MovieDetail}
+            name={'movie/detail'}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
