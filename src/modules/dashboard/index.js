@@ -5,6 +5,7 @@ import {View, ScrollView} from 'react-native';
 import SearchBar from './ui/search-bar';
 import MovieSection from 'shared/section/movie_section';
 import TopRatedMovies from './ui/top-rated';
+import RecommendedMovies from './ui/recommended-movies';
 
 //selectors
 import {movies} from 'redux_config/selectors';
@@ -30,7 +31,8 @@ export default function Dashboard() {
               data={moviesSearched}
             />
           )}
-          <MovieSection title={'RECOMMENDED FOR YOU'} seeAll={true} data={[]} />
+
+          <RecommendedMovies />
           <TopRatedMovies />
         </ScrollView>
       </View>

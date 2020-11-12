@@ -13,7 +13,7 @@ export default function (state = initialState, action) {
       break;
 
     case FETCH_RECOMMENDED_MOVIES_COMPLETE:
-      return {...state, loading: false, movies: action.res.data};
+      return {...state, loading: false, movies: action.res.data.results};
       break;
 
     case FETCH_RECOMMENDED_MOVIES_ERROR:

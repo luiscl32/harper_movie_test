@@ -29,6 +29,24 @@ function* getTopRatedMovies() {
   }
 }
 
+function* getRecommendedMovies({payload}) {
+  try {
+    const res = yield call(
+      apiCall,
+      `movie/${payload.movieId}/recommendations`,
+      '',
+      null,
+      null,
+      'GET',
+    );
+
+    yield put({type: FETCH_RECOMMENDED_MOVIES_COMPLETE, res});
+  } catch (error) {
+    yield put({type: FETCH_RECOMMENDED_MOVIES_ERROR, error});
+  }
+}
+
 export default function* movies() {
   yield takeLatest(FETCH_TOP_RATED_MOVIES_START, getTopRatedMovies);
+  yield takeLatest(FETCH_RECOMMENDED_MOVIES_START, getRecommendedMovies);
 }
