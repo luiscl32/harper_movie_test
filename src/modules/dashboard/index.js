@@ -24,7 +24,7 @@ export default function Dashboard() {
         <ScrollView style={s.scroll} showsVerticalScrollIndicator={false}>
           {!R.isEmpty(moviesSearched) && !R.isNil(moviesSearched) && (
             <MovieSection
-              title={'RESULT'}
+              title={'SEARCH RESULTS'}
               seeAll={false}
               data={moviesSearched}
             />

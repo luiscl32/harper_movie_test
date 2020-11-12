@@ -3,7 +3,7 @@ import {
   SEARCH_START,
   SEARCH_ERROR,
   SEARCH_COMPLETE,
-} from 'redux_config/constants';
+} from 'redux_config/constants/search';
 import {apiCall} from 'utils/api';
 
 function* searchMovie({payload}) {

@@ -2,7 +2,7 @@ import {
   SEARCH_START,
   SEARCH_ERROR,
   SEARCH_COMPLETE,
-} from 'redux_config/constants';
+} from 'redux_config/constants/search';
 
 const initialState = {};
 
